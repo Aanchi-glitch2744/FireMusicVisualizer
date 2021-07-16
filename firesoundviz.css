@@ -1,0 +1,526 @@
+body {
+/*	background: greenyellow;  */
+	margin: 0; 
+	padding: 0;
+	background-image: url(wavefull.png);
+}
+
+#room {
+	background-color: blue;
+	width: 100%;
+	height: 100%;
+}
+
+#header{
+	position: absolute;
+	top: 0;
+	background-color: black;
+	width: 100%;
+	height: 12%; 
+	/*border: 20px solid brown; */ 
+	font-family: 'creepster';
+}
+
+#headercontent {
+	position: absolute;
+	top: 3px; 
+	left: 35px;
+	width: 100%;
+	height: 100%;
+	color: #f83b22; 
+	text-shadow: 0.5px 0.5px green;
+	font-size: 17px;
+	background-image: url(waves.png);
+
+} 
+
+#left_burners {
+	position: absolute; 
+	margin-left: auto;
+	margin-top: 5.5%;
+	left: 0;
+	background-image: url(wavefull.png);
+	width: 10%;
+	height: 77%;
+/*	Transform: Translate(XXvw, XXvh);
+	border: 20px solid blue;*/
+
+}
+
+#burnervertical {
+	position: absolute; 
+	left: 15%;
+	width: 70%;
+	height: 100%;
+	color: orangered;
+	text-align: center;
+	background-color: rgba(0, 255, 0, 0.3);
+	border-radius: 75px;
+	animation: wavemotion 10000ms 0ms infinite linear,
+	colorpattern 10000ms 0ms infinite linear;
+}
+
+#container {
+	position: absolute; 
+	margin-right: auto;
+	margin-top: 5.5%;
+	right: 0;
+	background: black;
+	width: 90%;
+	height: 77%;
+}
+
+#canvas1 {
+	position: absolute; 
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background-image: url(wavefull.png); */
+	animation: colorpattern 10000ms 0ms infinite linear;
+}
+
+#audio1 {
+	position: absolute;
+	left: 27%;
+	width: 35%;
+	margin: 5px auto;
+	display: block;
+}
+
+#fileupload {
+	position: absolute; 
+	top: 10px;
+	right: 0;
+	color: white;
+}
+
+#footer{
+	position: absolute;
+	bottom: 0;
+	background-image: url(waves.png);
+	width: 100%;
+	height: 12%;
+}
+
+#footercontent {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	width: 95%;
+	height: 50%;
+	background-color: slategrey;
+	border-top-left-radius: 50px 20px;
+	border-bottom-left-radius: 50px 20px;
+	box-shadow: inset 2.5px 3.5px 0 rgba(0, 0, 0, 0.6);
+}
+
+#area{
+    position:relative;
+}
+.circle-pipe {
+	 background: lightgrey;
+	 box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.6),
+	 inset 2.5px 3.5px 0 #696969;
+	 width: 20px;
+	 height: 20px;
+	 border-radius: 50%;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* SkullLord */
+
+ *,:after,:before{box-sizing:border-box}
+.pull-left{float:left}
+.pull-right{float:right}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block} 
+
+.skullLord .head .skull:before,
+.skullLord .head .skull:after,
+.skullLord .eyes .eye:before,
+.skullLord .body:before,
+.skullLord .body:after,
+.skullLord .legs:before{
+  content:'';
+  position:absolute;
+}
+.skullLord {
+  top:5;
+  left:50%;
+  width:30px;
+  height:44px;
+  position:fixed;
+  margin-top:-22px;
+  margin-left:-15px;
+  animation:move 5s infinite;
+}
+
+.skullLord .head {
+  z-index:1;
+  width:25px;
+  height:25px;
+  background:#444;
+  border-radius:50%;
+  position:relative;
+}
+
+.skullLord .head .skull {
+  left:2px;
+  bottom:2px;
+  width:16px;
+  height:16px;
+  color:#f9f9f9;
+  border-radius:50%;
+  background:#f9f9f9;
+  position:absolute;
+  animation:skull 3s infinite;
+}
+
+.skullLord .head .skull:before {
+  top:9px;
+  width:0;
+  left:50%;
+  height:0;
+  z-index:1;
+  margin-left:-2px;
+  border:2px solid transparent;
+  border-bottom:2px solid #444;
+}
+
+.skullLord .head .skull:after {
+  top:14px;
+  left:50%;
+  width:1px;
+  height:4px;
+  margin-left:-1px;
+  background:#f9f9f9;
+  box-shadow: 2px 0,-2px 0,4px 0,-4px 0,
+        -3px -2px,-1px -2px,1px -2px,3px -2px;
+}
+
+.skullLord .eyes {
+  width:inherit;
+  height:inherit;
+  overflow:hidden;
+  border-radius:50%;
+  position:relative;
+}
+
+.skullLord .eyes .eye {
+  top:5px;
+  width:5px;
+  height:5px;
+  position:absolute;
+  border-radius:50%;
+  background:#f83b22;   /* yellow */
+  border:1px solid #444;
+  border-right:2px solid #444;
+}
+
+.skullLord .eyes .eye:before {
+  top:-1px;
+  left:-1px;
+  width:5px;
+  height:3px;
+  background:#f9f9f9;
+  border-radius:5px 5px 0 0;
+  animation:eyes 3s infinite;
+} 
+
+.skullLord .eyes .eye.eye-left {
+  left:1px;
+}
+
+.skullLord .eyes .eye.eye-right {
+  right:1px;
+}
+
+.skullLord .body {
+  top:-3px;
+  width:24px;
+  height:17px;
+  background:#444;
+  position:relative;
+  border-radius:10px 10px 2px 2px;
+}
+
+.skullLord .body:before,
+.skullLord .body:after {
+  top:3px;
+  width:4px;
+  height:12px;
+  background:#444;
+}
+
+.skullLord .body:before {
+  left:-1px;
+  border-radius:100% 0 0 2px;
+  transform:rotate(10deg);
+  animation:hand-left 3s infinite;
+}
+
+.skullLord .body:after {
+  right:-1px;
+  border-radius:0 100% 2px 0;
+  transform:rotate(-10deg);
+  animation:hand-right 3s infinite;
+}
+
+.skullLord .legs {
+  top:-3px;
+  left:50%;
+  width:21px;
+  height:10px;
+  overflow:hidden;
+  margin-left:-13px;
+  position:relative;
+  border-bottom:1px solid rgba(0,0,0,.2);
+}
+
+.skullLord .legs:before {
+  top:0;
+  left:-7px;
+  width:60px;
+  height:10px;
+  background-image:linear-gradient(-495deg, #444 4px,transparent 0), linear-gradient(-45deg, transparent 4px, #444 0);
+  background-size:4px 8px;
+  background-repeat:repeat-x;
+  animation:legs 3s infinite;
+}
+
+@keyframes move {
+  0%{
+    transform:translateX(0)
+  }
+  50%{
+    transform:translateX(15px)
+  }
+  100%{
+    transform:translateX(0)
+  }
+}
+
+@keyframes skull {
+  0%{
+    transform:translate(0,0)
+  }
+  25%{
+    transform:translate(2px,1px)
+  }
+  75%{
+    transform:translate(3px,-1px)
+  }
+  100%{
+    transform:translate(0,0)
+  }
+}
+
+@keyframes eyes {
+  0%{
+    top:-5px;
+    border-radius:50%;
+  }
+  50%{
+    top:-1px;
+    border-radius:5px 5px 0 0;
+  }
+  100%{
+    top:-5px;
+    border-radius:50%;
+  }
+}
+
+@keyframes legs {
+  0%{
+    left:-7px;
+  }
+  50%{
+    left:-25px;
+  }
+  100%{
+    left:-7px;
+  }
+}
+
+@keyframes hand-left {
+  0%{
+    left:1px;
+  }
+  50%{
+    left:-2px;
+  }
+  100%{
+    left:1px;
+  }
+}
+
+@keyframes hand-right {
+  0%{
+    right:1px;
+  }
+  50%{
+    right:-2px;
+  }
+  100%{
+    right:1px;
+  }
+}
+
+@keyframes colorpattern {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg); 
+  }
+  100% {
+    filter: hue-rotate(360deg); 
+  }
+}
+/*
+wave {
+    overflow: hidden;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    display: block;
+}
+.wave path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+    -webkit-animation: animate 3s linear infinite;
+    animation: animate 3s linear infinite
+}
+@-webkit-keyframes animate {
+    to {
+        stroke-dashoffset: 990;
+    }
+}
+@keyframes animate {
+    to {
+        stroke-dashoffset: 990;
+    }
+} 
+
+.skewed {
+  transform: skew(10deg); /* Equal to skewX(10deg) */
+ /* background-color: pink;
+}*/
+
+@keyframes wavemotion {
+  0% {
+    transform: skew(0);
+  }
+  25% {
+    transform: skew(15deg, 15deg);
+  }
+  50% {
+    transform: skew(-0.06turn, 18deg);
+  }
+  75% {
+    transform: skew(.312rad); 
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+
+.text-center {
+    text-align: center!important;
+}
+.error {
+    color: #5a5c69;
+    font-size: 7rem;
+    position: relative;
+    line-height: 1;
+    width: 12.5rem;
+}
+.mx-auto {
+    margin: auto;
+}
+.error:before {
+    content: attr(data-text);
+    position: absolute;
+    left: 8px;
+    text-shadow: 1px 0 #4e73df;
+    top: 0;
+    color: #5a5c69;
+    background: #f8f9fc;
+    overflow: hidden;
+    clip: rect(0,900px,0,0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+.error:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 14px;
+    text-shadow: -1px 0 #e74a3b;
+    top: 0;
+    color: #5a5c69;
+    background: #f8f9fc;
+    overflow: hidden;
+    clip: rect(0,900px,0,0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@-webkit-keyframes noise-anim{
+  0%{clip:rect(89px,9999px,100px,0)}
+  5%{clip:rect(4px,9999px,62px,0)}
+  10%{clip:rect(43px,9999px,16px,0)}
+  15%{clip:rect(2px,9999px,68px,0)}
+  20%{clip:rect(12px,9999px,6px,0)}
+  25%{clip:rect(89px,9999px,25px,0)}
+  30%{clip:rect(15px,9999px,38px,0)}
+  35%{clip:rect(57px,9999px,97px,0)}
+  40%{clip:rect(24px,9999px,72px,0)}
+  45%{clip:rect(81px,9999px,3px,0)}
+  50%{clip:rect(93px,9999px,26px,0)}
+  55%{clip:rect(68px,9999px,85px,0)}
+  60%{clip:rect(43px,9999px,28px,0)}
+  65%{clip:rect(44px,9999px,11px,0)}
+  70%{clip:rect(17px,9999px,33px,0)}
+  75%{clip:rect(74px,9999px,66px,0)}
+  80%{clip:rect(100px,9999px,4px,0)}
+  85%{clip:rect(92px,9999px,31px,0)}
+  90%{clip:rect(93px,9999px,98px,0)}
+  95%{clip:rect(23px,9999px,77px,0)}
+  100%{clip:rect(92px,9999px,8px,0)}
+}
+
+@keyframes noise-anim{
+  0%{clip:rect(89px,9999px,100px,0)}
+  5%{clip:rect(4px,9999px,62px,0)}
+  10%{clip:rect(43px,9999px,16px,0)}
+  15%{clip:rect(2px,9999px,68px,0)}
+  20%{clip:rect(12px,9999px,6px,0)}
+  25%{clip:rect(89px,9999px,25px,0)}
+  30%{clip:rect(15px,9999px,38px,0)}
+  35%{clip:rect(57px,9999px,97px,0)}
+  40%{clip:rect(24px,9999px,72px,0)}
+  45%{clip:rect(81px,9999px,3px,0)}
+  50%{clip:rect(93px,9999px,26px,0)}
+  55%{clip:rect(68px,9999px,85px,0)}
+  60%{clip:rect(43px,9999px,28px,0)}
+  65%{clip:rect(44px,9999px,11px,0)}
+  70%{clip:rect(17px,9999px,33px,0)}
+  75%{clip:rect(74px,9999px,66px,0)}
+  80%{clip:rect(100px,9999px,4px,0)}
+  85%{clip:rect(92px,9999px,31px,0)}
+  90%{clip:rect(93px,9999px,98px,0)}
+  95%{clip:rect(23px,9999px,77px,0)}
+  100%{clip:rect(92px,9999px,8px,0)}
+}
